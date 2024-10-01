@@ -200,3 +200,67 @@ pwn.college{UQZ90a3kr36DI33d9pLmbzuyRwp.dFzM4QDL1ATN0czW}
 
 ### In this challenge we learnt about the find command of linux terminal
 
+Approach: Use the find command with name parameter = flag, use hit and trial to see which one is correct
+
+```
+hacker@commands~finding-files:~$ cd /
+hacker@commands~finding-files:/$ find -name flag
+find: ‘./root’: Permission denied
+find: ‘./etc/ssl/private’: Permission denied
+find: ‘./tmp/tmp.G9qthVCks5’: Permission denied
+./usr/local/share/radare2/5.9.5/flag
+./usr/local/lib/python3.8/dist-packages/pwnlib/flag
+./usr/share/javascript/mathjax/unpacked/localization/es/flag
+find: ‘./var/cache/apt/archives/partial’: Permission denied
+find: ‘./var/cache/ldconfig’: Permission denied
+find: ‘./var/cache/private’: Permission denied
+find: ‘./var/log/private’: Permission denied
+find: ‘./var/log/apache2’: Permission denied
+find: ‘./var/log/mysql’: Permission denied
+find: ‘./var/lib/apt/lists/partial’: Permission denied
+find: ‘./var/lib/mysql-keyring’: Permission denied
+find: ‘./var/lib/php/sessions’: Permission denied
+find: ‘./var/lib/private’: Permission denied
+find: ‘./var/lib/mysql-files’: Permission denied
+find: ‘./var/lib/mysql’: Permission denied
+find: ‘./run/mysqld’: Permission denied
+find: ‘./run/sudo’: Permission denied
+find: ‘./proc/tty/driver’: Permission denied
+find: ‘./proc/1/task/1/fd’: Permission denied
+find: ‘./proc/1/task/1/fdinfo’: Permission denied
+find: ‘./proc/1/task/1/ns’: Permission denied
+find: ‘./proc/1/fd’: Permission denied
+find: ‘./proc/1/map_files’: Permission denied
+find: ‘./proc/1/fdinfo’: Permission denied
+find: ‘./proc/1/ns’: Permission denied
+find: ‘./proc/7/task/7/fd’: Permission denied
+find: ‘./proc/7/task/7/fdinfo’: Permission denied
+find: ‘./proc/7/task/7/ns’: Permission denied
+find: ‘./proc/7/fd’: Permission denied
+find: ‘./proc/7/map_files’: Permission denied
+find: ‘./proc/7/fdinfo’: Permission denied
+find: ‘./proc/7/ns’: Permission denied
+./opt/pwndbg/.venv/lib/python3.8/site-packages/pwnlib/flag
+./opt/radare2/libr/flag
+./nix/store/pmvk2bk4p550w182rjfm529kfqddnvh3-python3.11-pwntools-4.12.0/lib/python3.11/site-packages/pwnlib/flag
+./nix/store/1yagn5s8sf7kcs2hkccgf8d0wxlrv5sz-radare2-5.9.0/share/radare2/5.9.0/flag
+hacker@commands~finding-files:/$ cat ./usr/local/share/radare2/5.9.5/flag
+cat: ./usr/local/share/radare2/5.9.5/flag: Is a directory
+hacker@commands~finding-files:/$ cat ./usr/local/lib/python3.8/dist-packages/pwnlib/flag
+cat: ./usr/local/lib/python3.8/dist-packages/pwnlib/flag: Is a directory
+hacker@commands~finding-files:/$ cat ./usr/share/javascript/mathjax/unpacked/localization/es/flag
+pwn.college{4dCF7Ks5fTwwOTq3lwSFSXYTI92.dJzM4QDL1ATN0czW}
+```
+
+## linking files
+
+### In this challenge, we learnt about symlinks in linux, symlinks are created using ln -s source_file destination_file
+
+Approach: The /challenge/catflag program reads out /home/hacker/not-the-flag, so we have to create a symlink of /flag to /home/hacker/not-the-flag to trick the system into giving the flag
+
+```
+hacker@commands~linking-files:/$ ln -s /flag /home/hacker/not-the-flag
+hacker@commands~linking-files:/$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+pwn.college{4hPW8keCcC0aeEu5L0fP04O2Giy.dlTM1UDL1ATN0czW}
+```
