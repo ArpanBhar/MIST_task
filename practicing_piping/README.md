@@ -253,3 +253,26 @@ Great job! Here is your flag:
 pwn.college{8oQHESRa04TZdtOTEd0NSTes6IW.dFjM5QDL1ATN0czW}
 ```
 
+## writing to multiple programs
+
+### In this module, we learnt about how linux follows the philosophy of "everything is a file" and the use of >(), >() generated a temporary file (Which is not really a file) and replaces the path of that file in place of >(), and when the command inside the >() will run, it will take input from that imaginary file.
+
+Approach: we run /challenge/hack and tee its output to the imaginary file of >(/challenge/the) (which is actually the stdin of /challenge/the), and also pipe it to /challenge/planet
+
+```
+hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >(/challenge/the) | /challenge/planet
+Congratulations, you have duplicated data into the input of two programs! Here
+is your flag:
+pwn.college{8NVH5p9vAy5s5IayYhv1i-hs9aB.dBDO0UDL1ATN0czW}
+```
+
+## split-piping stderr and stdout
+
+Approach: take the stderr of /challnege/hack and redirect it to the imaginary file(stdin) of /challenge/the and pipe the stdout to /challenge/planet
+
+```
+hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack 2> >(/challenge/the) | /challenge/planet
+Congratulations, you have learned a redirection technique that even experts
+struggle with! Here is your flag:
+pwn.college{EnUFsJdhOZ9zgSrDdcvh7r1iNQU.dFDNwYDL1ATN0czW}
+```
