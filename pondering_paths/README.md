@@ -75,11 +75,39 @@ hacker@paths~position-elsewhere:/usr/share/build-essential$
 
 ## Position yet elsewhere
 
+```
+hacker@paths~position-yet-elsewhere:~$ /challenge/run
+Incorrect...
+You are not currently in the /tmp directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-yet-elsewhere:~$ cd ..
+hacker@paths~position-yet-elsewhere:/home$ cd ..
+hacker@paths~position-yet-elsewhere:/$ ls
+bin   challenge  etc   home  lib32  libx32  mnt  opt   root  sbin  sys  usr
+boot  dev        flag  lib   lib64  media   nix  proc  run   srv   tmp  var
+hacker@paths~position-yet-elsewhere:/$ cd tmp
+hacker@paths~position-yet-elsewhere:/tmp$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{Ez8_AxfNFncsbn26mL8s_xILEL-.dhDN1QDL1ATN0czW}
+```
+
 ## implicit relative paths, from /
 
 ### In this challenge we learnt about the usage of relative paths
 
 Relative paths are given without / and are relative to the current working directory
+
+```
+hacker@paths~implicit-relative-paths-from-:~$ cd ..
+hacker@paths~implicit-relative-paths-from-:/home$ cd ..
+hacker@paths~implicit-relative-paths-from-:/$ challenge/run
+Correct!!!
+challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{0jPPwuB7aRyCNgEzRFByIsoNQjj.dlDN1QDL1ATN0czW}
+```
 
 ## explicit relative paths, from /
 
@@ -94,10 +122,45 @@ Relative paths are given without / and are relative to the current working direc
 
 are all identical to each other
 
+```
+hacker@paths~explicit-relative-paths-from-:~$ ls
+l
+hacker@paths~explicit-relative-paths-from-:~$ cd ..
+hacker@paths~explicit-relative-paths-from-:/home$ ls
+hacker
+hacker@paths~explicit-relative-paths-from-:/home$ cd ..
+hacker@paths~explicit-relative-paths-from-:/$ ls
+bin   challenge  etc   home  lib32  libx32  mnt  opt   root  sbin  sys  usr
+boot  dev        flag  lib   lib64  media   nix  proc  run   srv   tmp  var
+hacker@paths~explicit-relative-paths-from-:/$ ./challenge/run
+Correct!!!
+./challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{Q9KcPYZP8WjuPZQFqmHpU2fRlDi.dBTN1QDL1ATN0czW}
+```
+
 ## implicit relative path
 
 Linux doesn't allow the use of "naked" relative paths to run anything as safety measure so that we don't accidentally run core system commands trying to run our program and vice versa, therefore we have to use explicit relative paths to execute the commands while still using relative paths
 
+```
+hacker@paths~implicit-relative-path:~$ cd ..
+hacker@paths~implicit-relative-path:/home$ cd ..
+hacker@paths~implicit-relative-path:/$ cd challenge
+hacker@paths~implicit-relative-path:/challenge$ ./run
+Correct!!!
+./run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{YRy_p8u2KeocsKb9Q49tWGPIsQz.dFTN1QDL1ATN0czW}
+```
+
 ## home sweet home
 
 In linux we'll often work in our home directory so linux provides a shorthand method to mention the absolute path of home directory using "~" symbol
+
+```
+hacker@paths~home-sweet-home:~$ /challenge/run ~/l
+Writing the file to /home/hacker/l!
+... and reading it back to you:
+pwn.college{A8prEDPYQQIWQdtgvpVZvFhYP0V.dNzM4QDL1ATN0czW}
+```
