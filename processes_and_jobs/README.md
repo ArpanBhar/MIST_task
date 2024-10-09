@@ -109,7 +109,7 @@ Goodbye!
 
 ## backgrounding processes
 
-### IN this module we learnt about the bg command which sends a process to the background and keeps it running there (not suspended)
+### In this module we learnt about the bg command which sends a process to the background and keeps it running there (not suspended)
 
 ```
 hacker@processes~backgrounding-processes:~$ /challenge/run
