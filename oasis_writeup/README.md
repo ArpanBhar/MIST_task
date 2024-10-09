@@ -1,5 +1,38 @@
 # Oasis Writeup
 
+## Keanu crack the matrix
+
+### This challenge taught me how negative modding with large numbers makes it behave like simple subtraction
+
+Challenge: A matrix was given with many seemingly random numbers, an encryption code was also given, we had to make a decryption code and decrypt it.
+
+Approach: 
+
+1. Looking at the decryption code, we can find that if i ≠ j, the negative values of the number array are modded with the primes, we also know the string length is 36 since there are 36 columns in the matrix
+2. Since negative mod with large numbers behaves like simple subtraction, we can retrieve the original primes by regenerating the number array and using the same i ≠ j condition but this time we subtract the negative values of the array
+3. After retrieving the keys we can subtract the encrypted number from the key to get the original ascii values
+4. Convert the ascii values to get the characters which give the flag
+
+Code:
+
+```python
+string_len = 36
+num_array = []
+keys=[]
+for i in range(1,string_len*string_len+1,string_len):
+    num_array.append([((-1)*j) for j in range(i,i+string_len)])
+
+with open(r"C:\Users\ARPAN BHAR\Desktop\OASIS_27\out.txt","r") as f:
+    encrypted_matrix = eval(f.read())
+for i in range(string_len-1):
+    keys.append(encrypted_matrix[i][i+1] - num_array[i][i+1])
+keys.append(encrypted_matrix[35][34]-num_array[35][34])
+for i in range(string_len):
+    print(chr(keys[i]-encrypted_matrix[i][i]),end="")
+```
+
+Flag: `OASIS{Bro_Really_Modded_It_Negative}`
+
 ## Heads up, tails down
 
 ### This challenge taught me about file headers
