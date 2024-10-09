@@ -1,4 +1,4 @@
-# Processes and Jobs
+console# Processes and Jobs
 
 ## listing processes
 
@@ -11,7 +11,7 @@ It has two syntax, standard and BSD.
 * Standard: ps -ef, the "e" means list out "e"very process and "f" means to do it in "f"ull format
 * BSD: ps aux, "a" means to list processes for "a"ll users, "u" means to do it in a "u"ser readable format and "x" means to list the processes that aren't running in the terminal
 
-```
+```console
 hacker@processes~listing-processes:~$ ps -ef
 UID          PID    PPID  C STIME TTY          TIME CMD
 root           1       0  0 04:43 ?        00:00:00 /sbin/docker-init -- /nix/var/nix/profiles/default/bin/dojo-init /ru
@@ -30,7 +30,7 @@ Now I will sleep for a while (so that you could find me with 'ps')
 
 ### In this module we learnt about the kill command which is used to stop processes
 
-```
+```console
 hacker@processes~killing-processes:~$ ps -ef|grep dont_run
 hacker        73      71  0 05:02 ?        00:00:00 /challenge/dont_run
 hacker        95      75  0 05:04 pts/0    00:00:00 grep --color=auto dont_run
@@ -46,7 +46,7 @@ pwn.college{gu0FGrZLSWUSyvROtrwUoMi3-j2.dJDN4QDL1ATN0czW}
 
 ### In this module we learnt how Ctrl + C interrupts any ongoing process that is waiting for an input from the terminal
 
-```
+```console
 hacker@processes~interrupting-processes:~$ /challenge/run
 I could give you the flag... but I won't, until this process exits. Remember,
 you can force me to exit with Ctrl-C. Try it now!
@@ -59,7 +59,7 @@ pwn.college{EPSxc7fx-epBU03Ft2LnFmQeSjQ.dNDN4QDL1ATN0czW}
 
 ### In this module we learnt about the usage of Ctrl + Z to suspend a process to the background
 
-```
+```console
 hacker@processes~suspending-processes:~$ /challenge/run
 I'll only give you the flag if there's already another copy of me running in
 this terminal... Let's check!
@@ -92,7 +92,7 @@ pwn.college{0GRrkngd7PTZqlaljo-1hkBU5o-.dVDN4QDL1ATN0czW}
 
 ### In this module we learnt about the fg command which puts a suspended process running in the background to the terminal again
 
-```
+```console
 hacker@processes~resuming-processes:~$ /challenge/run
 Let's practice resuming processes! Suspend me with Ctrl-Z, then resume me with
 the 'fg' command! Or just press Enter to quit me!
@@ -111,7 +111,7 @@ Goodbye!
 
 ### In this module we learnt about the bg command which sends a process to the background and keeps it running there (not suspended)
 
-```
+```console
 hacker@processes~backgrounding-processes:~$ /challenge/run
 I'll only give you the flag if there's already another copy of me running *and
 not suspended* in this terminal... Let's check!
@@ -154,7 +154,7 @@ pwn.college{USUSxa33Z9WK_6mEYS4cMos6D-j.ddDN4QDL1ATN0czW}
 
 ### In this module we learnt that the fg command can also bring back a process that was backgrounded
 
-```
+```console
 hacker@processes~foregrounding-processes:~$ /challenge/run
 To pass this level, you need to suspend me, resume the suspended process in the
 background, and *then* foreground it without re-suspending it! You can
@@ -183,7 +183,7 @@ pwn.college{YJS7_6ikMgNANKJTBdgVwRIyfRJ.dhDN4QDL1ATN0czW}
 
 ### In this challenge we learnt how to start a process in the background right off the bat by appending a "&" after the command
 
-```
+```console
 hacker@processes~starting-backgrounded-processes:~$ /challenge/run &
 [1] 82
 
@@ -202,7 +202,7 @@ pwn.college{8Re1ISgc0eMWC3QhAYXP2_-A4K7.dlDN4QDL1ATN0czW}
 
 ### In this challenge we learnt how we can retrieve exit codes of the most recently terminated process using echo $? command
 
-```
+```console
 hacker@processes~process-exit-codes:~$ /challenge/get-code
 Exiting with an error code!
 hacker@processes~process-exit-codes:~$ echo $?

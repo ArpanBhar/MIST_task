@@ -4,7 +4,7 @@
 
 ### In this challenge, we learnt how to redirect the output of a command to a file
 
-```
+```console
 hacker@piping~redirecting-output:~$ echo PWN > COLLEGE
 Correct! You successfully redirected 'PWN' to the file 'COLLEGE'! Here is your
 flag:
@@ -13,7 +13,7 @@ pwn.college{AwSbQmEbzp9boq5XmtXdKnG4jYF.dRjN1QDL1ATN0czW}
 
 ## redirecting more output
 
-```
+```console
 hacker@piping~redirecting-more-output:~$ /challenge/run > myflag
 [INFO] WELCOME! This challenge makes the following asks of you:
 [INFO] - the challenge will check that output is redirected to a specific file path : myflag
@@ -38,7 +38,7 @@ hacker@piping~redirecting-more-output:~$ cat myflag
 
 ### In this module, we learnt how to append the output of a command to a file, this operation won't overwrite the original file
 
-```
+```console
 hacker@piping~appending-output:~$ /challenge/run >> /home/hacker/the-flag
 [INFO] WELCOME! This challenge makes the following asks of you:
 [INFO] - the challenge will check that output is redirected to a specific file path : /home/hacker/the-flag
@@ -106,7 +106,7 @@ mode!
 1 = stdout (Default)
 2 = stderr
 
-```
+```console
 hacker@piping~redirecting-errors:~$ /challenge/run >myflag 2>instructions
 hacker@piping~redirecting-errors:~$ cat instructions
 [INFO] WELCOME! This challenge makes the following asks of you:
@@ -139,7 +139,7 @@ hacker@piping~redirecting-errors:~$ cat myflag
 
 Syntax: program < file
 
-```
+```console
 hacker@piping~redirecting-input:~$ echo COLLEGE > PWN
 hacker@piping~redirecting-input:~$ /challenge/run < PWN
 Reading from standard input...
@@ -153,7 +153,7 @@ pwn.college{g09YLhHlJiTfOTMZHFv85NZLm2i.dBzN1QDL1ATN0czW}
 
 Approach: redirect output of challenge/run to tmp/data.txt and then search for line containing "pwn.college" (Since every flag starts with pwn.college) in the txt file using grep
 
-```
+```console
 hacker@piping~grepping-stored-results:~$ /challenge/run > /tmp/data.txt
 [INFO] WELCOME! This challenge makes the following asks of you:
 [INFO] - the challenge will check that output is redirected to a specific file path : /tmp/data.txt
@@ -180,7 +180,7 @@ pwn.college{gXplUx0-0CgKZHJmZqtD2yhotaW.dhTM4QDL1ATN0czW}
 
 ### In this challenge we learn about the use of pipe |, it can be used to redirect the stdout of a program to the stdin of another program
 
-```
+```console
 hacker@piping~grepping-live-output:~$ /challenge/run | grep pwn.college
 [INFO] WELCOME! This challenge makes the following asks of you:
 [INFO] - the challenge checks for a specific process at the other end of stdout : grep
@@ -209,7 +209,7 @@ pwn.college{cEAD-6PtZVLLatFDgkzJgA50tP6.dlTM4QDL1ATN0czW}
 
 Approach: redirect stderr of challenge/run to stdout using 2>&1 then use the pipe | operator to redirect the stdout to stdin of grep
 
-```
+```console
 hacker@piping~grepping-errors:~$ /challenge/run 2>&1 | grep pwn.college
 [INFO] WELCOME! This challenge makes the following asks of you:
 [INFO] - the challenge checks for a specific process at the other end of stderr : grep
@@ -236,7 +236,7 @@ pwn.college{kh5SKDsxXxQmCD31dagDoWa1a9K.dVDM5QDL1ATN0czW}
 
 ### In this module we learnt about the usage of tee (like T pipe in plumbing) which can be used to intercept stdout when it's being piped to another command
 
-```
+```console
 hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn | tee code | /challenge/college
 Processing...
 The input to 'college' does not contain the correct secret code! This code
@@ -259,7 +259,7 @@ pwn.college{8oQHESRa04TZdtOTEd0NSTes6IW.dFjM5QDL1ATN0czW}
 
 Approach: we run /challenge/hack and tee its output to the imaginary file of >(/challenge/the) (which is actually the stdin of /challenge/the), and also pipe it to /challenge/planet
 
-```
+```console
 hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >(/challenge/the) | /challenge/planet
 Congratulations, you have duplicated data into the input of two programs! Here
 is your flag:
@@ -270,7 +270,7 @@ pwn.college{8NVH5p9vAy5s5IayYhv1i-hs9aB.dBDO0UDL1ATN0czW}
 
 Approach: take the stderr of /challnege/hack and redirect it to the imaginary file(stdin) of /challenge/the and pipe the stdout to /challenge/planet
 
-```
+```console
 hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack 2> >(/challenge/the) | /challenge/planet
 Congratulations, you have learned a redirection technique that even experts
 struggle with! Here is your flag:

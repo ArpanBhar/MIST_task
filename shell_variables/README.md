@@ -6,7 +6,7 @@
 
 Approach: Print out the value of FLAG variable using echo command
 
-```
+```console
 hacker@variables~printing-variables:~$ echo $FLAG
 pwn.college{Eqrj0m3SVx9Lbfz3h4qt4c269Pf.ddTN1QDL1ATN0czW}
 ```
@@ -15,7 +15,7 @@ pwn.college{Eqrj0m3SVx9Lbfz3h4qt4c269Pf.ddTN1QDL1ATN0czW}
 
 ### In this module we learnt how to store values in shell variables
 
-```
+```console
 hacker@variables~setting-variables:~$ PWN=COLLEGE
 You've set the PWN variable properly! As promised, here is the flag:
 pwn.college{YSa4MSPE8nvudlO4Dn_F6GQRId3.dlTN1QDL1ATN0czW}
@@ -25,7 +25,7 @@ pwn.college{YSa4MSPE8nvudlO4Dn_F6GQRId3.dlTN1QDL1ATN0czW}
 
 ### In this module we learnt how to set multi line variables using double quotes
 
-```
+```console
 hacker@variables~multi-word-variables:~$ PWN="COLLEGE YEAH"
 You've set the PWN variable properly! As promised, here is the flag:
 pwn.college{sLsVnzyM5s9iYgQ5vMKZBIhMIGY.dBjN1QDL1ATN0czW}
@@ -35,7 +35,7 @@ pwn.college{sLsVnzyM5s9iYgQ5vMKZBIhMIGY.dBjN1QDL1ATN0czW}
 
 ### In this module we learnt how to export local variables to other commands/child processes using the "export" keyword
 
-```
+```console
 hacker@variables~exporting-variables:~$ export PWN=COLLEGE
 You've set the PWN variable to the proper value!
 hacker@variables~exporting-variables:~$ COLLEGE=PWN
@@ -54,7 +54,7 @@ You've set the COLLEGE variable to the proper value!
 
 ### In this module we learnt about the "env" command which lists out every environment variable
 
-```
+```console
 hacker@variables~printing-exported-variables:~$ env
 SHELL=/run/dojo/bin/bash
 HOSTNAME=variables~printing-exported-variables
@@ -78,7 +78,7 @@ _=/run/workspace/bin/env
 
 ### In this module we learnt how to store the output of a command into a variable using var=$(command)
 
-```
+```console
 hacker@variables~storing-command-output:~$ PWN=$(/challenge/run)
 Congratulations! You have read the flag into the PWN variable. Now print it out
 and submit it!
@@ -92,7 +92,7 @@ pwn.college{gOuYhSYlX0h5o4Yy-JjBMxHQYp5.dVzN0UDL1ATN0czW}
 
 Syntax: read -p "THE PROMPT" THE_VARIABLE
 
-```
+```console
 hacker@variables~reading-input:~$ read PWN
 COLLEGE
 You've set the PWN variable properly! As promised, here is the flag:
@@ -105,7 +105,7 @@ pwn.college{0DTjiVc94MvVCZ8ztl2st27bm6z.dhzN1QDL1ATN0czW}
 
 Approach: We know how to pass a file into the standard input of a command using "<" and we also know read is a command that takes input and stores it into a variable, combining the two, we can read files into a variable.
 
-```
+```console
 hacker@variables~reading-files:~$ read PWN < /challenge/read_me
 You've set the PWN variable properly! As promised, here is the flag:
 pwn.college{skj14aoniCU7JIY7_3prqn1lNyx.dBjM4QDL1ATN0czW}

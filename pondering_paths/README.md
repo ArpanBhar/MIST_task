@@ -6,7 +6,7 @@
 
 The linux filesystem starts with / and paths are written like /path
 
-```
+```console
 hacker@paths~the-root:~$ /pwn
 BOOM!!!
 Here is your flag:
@@ -19,7 +19,7 @@ pwn.college{srML2na9eBxkqC6s7crOyjwqoFW.dhzN5QDL1ATN0czW}
 
 Absolute path = /path/filename
 
-```
+```console
 hacker@paths~program-and-absolute-paths:~$ /challenge/run
 Correct!!!
 /challenge/run is an absolute path! Here is your flag:
@@ -32,7 +32,7 @@ pwn.college{sCAegtJwNO4izJ5VBka4ZjJIxlq.dVDN1QDL1ATN0czW}
 
 We have to use cd (change directory) command
 
-```
+```console
 hacker@paths~position-thy-self:~$ /challenge/run
 Incorrect...
 You are not currently in the /var directory.
@@ -56,7 +56,7 @@ pwn.college{IyoNLl8rhcX_xHnBIBW4NYHFgLB.dZDN1QDL1ATN0czW}
 
 ## Position elsewhere
 
-```
+```console
 hacker@paths~position-elsewhere:~$ /challenge/run
 Incorrect...
 You are not currently in the /usr/share/build-essential directory.
@@ -75,7 +75,7 @@ hacker@paths~position-elsewhere:/usr/share/build-essential$
 
 ## Position yet elsewhere
 
-```
+```console
 hacker@paths~position-yet-elsewhere:~$ /challenge/run
 Incorrect...
 You are not currently in the /tmp directory.
@@ -99,7 +99,7 @@ pwn.college{Ez8_AxfNFncsbn26mL8s_xILEL-.dhDN1QDL1ATN0czW}
 
 Relative paths are given without / and are relative to the current working directory
 
-```
+```console
 hacker@paths~implicit-relative-paths-from-:~$ cd ..
 hacker@paths~implicit-relative-paths-from-:/home$ cd ..
 hacker@paths~implicit-relative-paths-from-:/$ challenge/run
@@ -122,7 +122,7 @@ pwn.college{0jPPwuB7aRyCNgEzRFByIsoNQjj.dlDN1QDL1ATN0czW}
 
 are all identical to each other
 
-```
+```console
 hacker@paths~explicit-relative-paths-from-:~$ ls
 l
 hacker@paths~explicit-relative-paths-from-:~$ cd ..
@@ -143,7 +143,7 @@ pwn.college{Q9KcPYZP8WjuPZQFqmHpU2fRlDi.dBTN1QDL1ATN0czW}
 
 Linux doesn't allow the use of "naked" relative paths to run anything as safety measure so that we don't accidentally run core system commands trying to run our program and vice versa, therefore we have to use explicit relative paths to execute the commands while still using relative paths
 
-```
+```console
 hacker@paths~implicit-relative-path:~$ cd ..
 hacker@paths~implicit-relative-path:/home$ cd ..
 hacker@paths~implicit-relative-path:/$ cd challenge
@@ -158,7 +158,7 @@ pwn.college{YRy_p8u2KeocsKb9Q49tWGPIsQz.dFTN1QDL1ATN0czW}
 
 In linux we'll often work in our home directory so linux provides a shorthand method to mention the absolute path of home directory using "~" symbol
 
-```
+```console
 hacker@paths~home-sweet-home:~$ /challenge/run ~/l
 Writing the file to /home/hacker/l!
 ... and reading it back to you:

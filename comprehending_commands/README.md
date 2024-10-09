@@ -4,21 +4,21 @@
 
 ### cat is used to read out files and it will concatenate the data of files and output them if multiple arguments are given
 
-```
+```console
 hacker@commands~cat-not-the-pet-but-the-command:~$ cat flag
 pwn.college{UKNO4IIIyeQbbt0kkRvxchGKAir.dFzN1QDL1ATN0czW}
 ```
 
 ## catting absolute paths
 
-```
+```console
 hacker@commands~catting-absolute-paths:~$ cat /flag
 pwn.college{AVSKIYfxzxvUrYchCHpJCKTXQ7f.dlTM5QDL1ATN0czW}
 ```
 
 ## more catting practice
 
-```
+```console
 You cannot use the 'cd' command in this level, and must retrieve the flag by
 absolute path. Plus, I hid the flag in a different directory! You can find it
 in the file /opt/tcpdump/tests/flag. Go cat it out **without** cding into that
@@ -31,7 +31,7 @@ pwn.college{k37_2lwTBTCROe-Uc3yXxwUxSk5.dBjM5QDL1ATN0czW}
 
 ### In this challenge we learnt about the grep command which is used to search for a line of text which contains a particular string
 
-```
+```console
 hacker@commands~grepping-for-a-needle-in-a-haystack:~$ grep pwn.college /challenge/data.txt
 pwn.college{IL7vyhuKo4_2odDdOkLyFW7JpLw.ddTM4QDL1ATN0czW}
 ```
@@ -42,7 +42,7 @@ pwn.college{IL7vyhuKo4_2odDdOkLyFW7JpLw.ddTM4QDL1ATN0czW}
 
 ls will list all the files and folders in the specified directory
 
-```
+```console
 hacker@commands~listing-files:~$ ls /challenge
 28331-renamed-run-13080  DESCRIPTION.md
 hacker@commands~listing-files:~$ cd /challenge
@@ -55,7 +55,7 @@ pwn.college{4JxAvhZ71w3BsdiB_nttVPLE5Ot.dhjM4QDL1ATN0czW}
 
 ### In this challenge we create a blank file using the touch command
 
-```
+```console
 hacker@commands~touching-files:~$ touch /tmp/pwn
 hacker@commands~touching-files:~$ touch /tmp/college
 hacker@commands~touching-files:~$ /challenge/run
@@ -67,7 +67,7 @@ pwn.college{AdL0QW-O8mYAdiyUzLz6bEpizD5.dBzM4QDL1ATN0czW}
 
 ### In this challenge we learn how to remove a file using the rm command
 
-```
+```console
 hacker@commands~removing-files:~$ rm delete_me
 hacker@commands~removing-files:~$ /challenge/check
 Excellent removal. Here is your reward:
@@ -78,7 +78,7 @@ pwn.college{MI-RXVOWlSV3kxTgcPlxhwSSeLX.dZTOwUDL1ATN0czW}
 
 ### In linux, the ls command doesn't show the files starting with . to see those files too we use the -a flag
 
-```
+```console
 hacker@commands~hidden-files:~$ ls -a
 .  ..  .bash_history  .bash_logout  .bashrc  .profile  l
 hacker@commands~hidden-files:~$ cd ..
@@ -96,7 +96,7 @@ pwn.college{wmoIWtMk5qUJT0bXALZdcjZzmRs.dBTN4QDL1ATN0czW}
 
 ### In this challenge we had to follow the clues step-by-step which led to the flag
 
-```
+```console
 hacker@commands~an-epic-filesystem-quest:/$ ls
 SECRET  boot       dev  flag  lib    lib64   media  nix  proc  run   srv  tmp  var
 bin     challenge  etc  home  lib32  libx32  mnt    opt  root  sbin  sys  usr
@@ -188,7 +188,7 @@ It is: pwn.college{AoeNPUaSCCyOSQ5WPlA1W3Cx9DP.dljM4QDL1ATN0czW}
 
 ### In this challenge we learn how to make directories using the mkdir command
 
-```
+```console
 hacker@commands~making-directories:~$ mkdir /tmp/pwn
 hacker@commands~making-directories:~$ touch /tmp/pwn/college
 hacker@commands~making-directories:~$ /challenge/run
@@ -202,7 +202,7 @@ pwn.college{UQZ90a3kr36DI33d9pLmbzuyRwp.dFzM4QDL1ATN0czW}
 
 Approach: Use the find command with name parameter = flag, use hit and trial to see which one is correct
 
-```
+```console
 hacker@commands~finding-files:~$ cd /
 hacker@commands~finding-files:/$ find -name flag
 find: ‘./root’: Permission denied
@@ -258,7 +258,7 @@ pwn.college{4dCF7Ks5fTwwOTq3lwSFSXYTI92.dJzM4QDL1ATN0czW}
 
 Approach: The /challenge/catflag program reads out /home/hacker/not-the-flag, so we have to create a symlink of /flag to /home/hacker/not-the-flag to trick the system into giving the flag
 
-```
+```console
 hacker@commands~linking-files:/$ ln -s /flag /home/hacker/not-the-flag
 hacker@commands~linking-files:/$ /challenge/catflag
 About to read out the /home/hacker/not-the-flag file!

@@ -6,7 +6,7 @@
 
 We have to type the command in the linux terminal
 
-``` 
+```console
 hacker@hello~intro-to-commands:~$ hello
 Success! Here is your flag:
 pwn.college{E6CjUyPLqHz-tgrjeOr2zf_qlX2.ddjNyUDL1ATN0czW} 
@@ -18,7 +18,7 @@ pwn.college{E6CjUyPLqHz-tgrjeOr2zf_qlX2.ddjNyUDL1ATN0czW}
 
 We have to type the arguments on the right hand side of the command.
 
-```
+```console
 hacker@hello~intro-to-arguments:~$ hello hackers
 Success! Here is your flag:
 pwn.college{M41U4xKNhoTyLuq5THlq3IX-Rq9.dhjNyUDL1ATN0czW}
