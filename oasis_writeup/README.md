@@ -72,7 +72,7 @@ Approach:
 
     ```python
     import requests
-    r = requests.post("https://startgame.oasis.cryptonite.live/game?name=cryptonite")
+    r = requests.post("https://startgame.oasis.cryptonite.live/game?name=cryptonite",headers = {'User-Agent': 'OASISPlayer'})
     print(r.text)
     ```
     This gives an error message:
