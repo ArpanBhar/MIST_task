@@ -67,7 +67,7 @@ Approach:
 
 1. "You need to be OASISPlayer to start the game" message indicates we have to set user-agent as "OASISPlayer"
 2. Upon doing that we are given a message "Can you give me the name of the Student Project organizing this event as a url parameter 'name'?"
-3. Simply typing "https://startgame.oasis.cryptonite.live/game?name=cryptonite" in the url section in browser won't work since that sends a GET request that means we are supposed to send a POST request
+3. Simply typing "https://startgame.oasis.cryptonite.live/game?name=cryptonite" in the url section in browser won't work since that sends a GET request that means we can try sending a POST request
 4. Send a POST request to the /game endpoint:
 
     ```python
