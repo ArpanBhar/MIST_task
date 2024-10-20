@@ -8,7 +8,7 @@ Challenge: A matrix was given with many seemingly random numbers, an encryption 
 
 Approach: 
 
-1. Looking at the decryption code, we can find that if i ≠ j, the negative values of the number array are modded with the primes, we also know the string length is 36 since there are 36 columns in the matrix
+1. Looking at the encryption code, we can find that if i ≠ j, the negative values of the number array are modded with the primes, we also know the string length is 36 since there are 36 columns in the matrix
 2. Since negative mod with large numbers behaves like simple subtraction, we can retrieve the original primes by regenerating the number array and using the same i ≠ j condition but this time we subtract the negative values of the array
 3. After retrieving the keys we can subtract the encrypted number from the key to get the original ascii values
 4. Convert the ascii values to get the characters which give the flag
