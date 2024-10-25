@@ -42,9 +42,7 @@ Approach:
 ```console
 hacker@path~adding-commands:~$ echo "cat /flag" > win
 hacker@path~adding-commands:~$ chmod u+x win
-hacker@path~adding-commands:~$ echo $PATH
-/run/challenge/bin:/run/workspace/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-hacker@path~adding-commands:~$ PATH=/run/challenge/bin:/run/workspace/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/hacker
+hacker@path~adding-commands:~$ PATH=$PATH+":/home/hacker"
 hacker@path~adding-commands:~$ /challenge/run
 Invoking 'win'....
 pwn.college{MZnCgWbo8_OA3XPbjuitkiiLDV9.dZzNyUDL1ATN0czW}
